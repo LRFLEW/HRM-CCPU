@@ -1,0 +1,25 @@
+%struct-type
+%language=C++
+%define lookup-function-name get
+%define class-name InstructionLookup
+%readonly-tables
+%{
+#include <cstdint>
+#include <cstring>
+#define register
+%}
+struct Instruction { const char *name; const uint8_t cmd; };
+%%
+INBOX, 0x0
+OUTBOX, 0x1
+COPYTO, 0x2
+COPYFROM, 0x3
+ADD, 0x4
+SUB, 0x5
+BUMPUP, 0x6
+BUMPDN, 0x7
+JUMP, 0x8
+JUMPZ, 0x9
+JUMPN, 0xA
+COMMENT, 0xB
+DEFINE, 0xE
