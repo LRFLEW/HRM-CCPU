@@ -15,9 +15,14 @@ Error handling is not finished yet, so a failure at any point will just exit the
 
 The initial memory state and inbox are handled via a comment in the program source. Start the comment with `--#` to begin the data. The first number is the number of avaiable memory locations avaiable to the program. Each pair of numbers after indicate the memory index and value at the index before the program starts. Next, is a `:`, and then the values that come from the Inbox, starting with the first to be read. Finally, the comment ends with `#--`. This entire comment needs to be on a single line. An example for problem 20 is `--# 10 9 0 : 9 4 1 7 7 0 0 8 4 2 #--`
 
+### HRM-SVG
+
+Included is another project that can export the comments and labels made in the game. It requires zlib to build and run. It can be build by running `make hrm-svg` or `make all`. When run, it will produce an SVG image of the comment or label. It's in a roughly written stage currently, and will likely be merged into HRM-CCPU.
+
 ### Related Projects
 
  * [hrm-cpu](https://github.com/nrkn/hrm-cpu) - A similar project to this one, but written in Javascript.
+ * [hrm-hrm-image-decoder](https://github.com/nrkn/hrm-image-decoder) - A javascript program similar to HRM-SVG, but with raw path exporting instead.
  * [hrmsandbox](https://github.com/sixlettervariables/hrmsandbox) - Another interpreter in Javacript, but includes a web interface and a more flexible interpreter.
  * [hrm-level-data](https://github.com/atesgoral/hrm-level-data) - Has metadata for each level in the game. Useful for generating the initial state comments.
  * [hrm-solutions](https://github.com/atesgoral/hrm-solutions) - A collection of solutions for each level in the game.
